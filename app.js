@@ -18,15 +18,14 @@ const fetchData = async () => {
     fetchnsave.SaveHtml("./scrap.html",x)
     //console.log(result.data)
     //return cheerio.load(result.data);
-
     const $ = cheerio.load(x);
     
     $('.accordionpanel.section').each(function( index ) {
       //console.log( index + ": " + $( this ).text() );
-      y[index]=$( this ).html();
+      y[index]=$( this ).text();
       z=z+' '+$( this ).html();
     });
-    //console.log(z);
+    console.log(y[1]);
     fetchnsave.SaveHtml("./scrap3.html",z);
 
     };
