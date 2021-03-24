@@ -13,7 +13,9 @@
     "cheerio": "^1.0.0-rc.5",
     "express": "^4.17.1",
     "node-local-tunnel": "^0.1.8",
+    "nodemon": "^2.0.7",
     "puppeteer": "^8.0.0",
+    "regex": "^0.1.1",
     "request": "^2.88.2",
     "request-promise": "^4.2.6"
   }
