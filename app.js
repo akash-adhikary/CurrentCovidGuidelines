@@ -25,7 +25,9 @@ const fetchData = async () => {
       y[index]=$( this ).text();
       z=z+' '+$( this ).html();
     });
-    console.log(y[1]);
+    var a=y[2].trim().split("\n");
+    var b=a.join(" # ");
+    console.log(b);
     fetchnsave.SaveHtml("./scrap3.html",z);
 
     };
