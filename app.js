@@ -11,7 +11,7 @@ const axios = require("axios");
 var Regex = require("regex");
 var y=[];
 var z='';
-
+var statewiseguidelines={};
 const fetchData = async () => {
     const result = await axios.get(siteUrl);
     let x = result.data
@@ -23,11 +23,19 @@ const fetchData = async () => {
     $('.accordionpanel.section').each(function( index ) {
       //console.log( index + ": " + $( this ).text() );
       y[index]=$( this ).text();
+      var lines=y[index].trim().split("\n");
+      var state_name=lines.splice(0,1).join();
+      var guidelines=lines.join("\n").trim();
+      //var guidelines=a.join("\n").trim();
+      statewiseguidelines[state_name]= guidelines;
+     
       z=z+' '+$( this ).html();
     });
-    var a=y[2].trim().split("\n");
-    var b=a.join(" # ");
-    console.log(b);
+    //console.log(statewiseguidelines);
+   //console.log(statewiseguidelines["Assam"]);
+    // var a=y[2].trim().split("\n");
+    // var state=a.splice(0,1);
+    // var statename=state.join();
     fetchnsave.SaveHtml("./scrap3.html",z);
 
     };
